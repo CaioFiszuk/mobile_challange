@@ -40,7 +40,7 @@ I have learned:
       }
   ```
 
-  - The variables in CSS
+- The variables in CSS
   ```
      :root{
     --bg-header: #8e9aaf;
