@@ -1,0 +1,266 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-header: #8e9aaf;
+    --bg-title: #cbc0d3;
+    --bg-body: #eff1ff;
+    --bg-span: #feeafa;
+    --fc-span: #4a4e69;
+    --fc-paragraph: #23053a;
+    --ff-primary: 'Staatliches', cursive;
+    --ff-secondary: 'Palanquin', sans-serif;
+    --ff-third: 'Roboto', sans-serif;
+    --ff-forty: 'Open Sans', sans-serif;
+
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--bg-body);
+    font-family: var(--ff-secondary);
+}
+
+h1, span{
+    font-family: var(--ff-primary);
+}
+
+header{
+    background-color: var(--bg-header);
+    width: 100%;
+    padding-top: 3.2rem;
+    padding-bottom: 2.9rem;
+}
+
+header div{
+    width: 13.7rem;
+    height: 13.7rem;
+    margin: auto;
+}
+
+header div img:last-child{
+    display: none;
+}
+
+header h1{
+    background-color: var(--bg-title);
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.05em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-top: 3.2rem;
+}
+
+header p{
+    display: none;
+}
+
+main{
+    width: 32rem;
+    margin: 1.4rem auto;
+}
+
+main p{
+    color: var(--fc-paragraph);
+    font-size: 2.0rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 1.2rem;
+    padding-bottom: 3.3rem;
+}
+
+main .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+}
+
+main img{
+    width: 100%;
+}
+
+main .image-hidden1, main .image-hidden2{
+    display: none;
+}
+
+main .card{
+    position: relative;
+
+    animation-name: downtop;
+    animation-duration: 1s;
+    animation-delay: 50ms;
+}
+
+main span{
+    font-size: 2.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    color: var(--fc-span);
+    background-color: var(--bg-span);
+    padding: 0.2rem 2.4rem;
+    border-radius: 2.0rem;
+
+    position: absolute;
+    top: 1.6rem;
+    left: 19.2rem;
+
+    animation-name: topdown;
+    animation-duration: 1s;
+    animation-delay: 50ms;
+}
+
+footer{
+    display: none;
+}
+
+@keyframes topdown {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+     }
+ 
+     100%{
+        opacity: 1;
+        transform: translateY(0);
+     }
+}
+
+@keyframes downtop {
+    0%{
+       opacity: 0; 
+       transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+       transform: translateY(0);
+    }
+}
+
+@media(min-width: 500px){
+    body{
+        display: flex;
+        gap: 9.8rem;
+    }
+
+    header{
+        width: 37.7rem;
+        height: 72.0rem;
+    }
+
+    header div{
+        width: 21.4rem;
+        height: 16.7rem;
+    }
+
+    header div img:first-child{
+        display: none;
+    }
+
+    header div img:last-child{
+        display: block;
+    }
+
+    header p{
+        display: inline-block;
+        color: white;
+        font-family: var(--ff-third);
+        font-size: 2.4rem;
+        line-height: 2.0rem;
+        text-align: center;
+        margin: 3.2rem auto;
+        padding: 10px 20px;
+    }
+
+    main{
+        width: 73.4rem;
+        height: 53.0rem;
+        margin-top: 6.4rem;
+    }
+
+    main .cards{
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 9.8rem;
+
+        grid-template-areas:
+                             'A B C'
+                             'D B F'
+                             'D E F'; 
+    }
+
+    main .image-hidden1, main .image-hidden2{
+        display: block;
+    }
+
+    /*Paleta*/
+    main .card:nth-child(1){
+        width: 100%;
+        grid-area: A;
+    }
+
+    /*Shake*/
+    main .card:nth-child(2){
+        width: 22.0rem;
+        grid-area: B;
+    }
+
+    /*Massa*/
+    main .card:nth-child(3){
+        width: 22.0rem;
+        grid-area: E;
+    }
+
+    /*Picolé*/
+    main .card:nth-child(4){
+        width: 22.0rem; 
+        grid-area: D;
+    }
+
+    /*Paleta*/
+    main .card:nth-child(5){
+        width: 100%;
+        grid-area: C;
+    }
+
+    /*Picolé*/
+    main .card:nth-child(6){
+        width: 22.0rem;
+        grid-area: F;
+    }
+
+    main .card{
+        animation: none;
+    }
+
+    main p{
+        display: none;
+    }
+
+    main span{
+        display: none;
+    }
+
+    footer{
+        display: block;
+        color: var(--fc-span);
+        font-family: var(--ff-forty);
+        font-size: 1.4rem;
+        line-height: 2.8rem;
+        text-align: center;
+        position: absolute;
+        top: 63.0rem;
+        left: 70.0rem;
+    }
+
+}
