@@ -1,5 +1,5 @@
 # Mobile_challange
-### Challange about the mobile application
+### It is a simple and responsive web page
 -------------------------------------------
 I have learned:
 
